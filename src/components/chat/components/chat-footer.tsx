@@ -5,11 +5,12 @@ import { RiSendPlaneLine } from "react-icons/ri";
 
 import { useChatStore } from "@/store/useChatStore";
 import { ChatMessage, getAIResponse } from "@/service/getAIResponse";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 export const ChatFooter = () => {
   const [textMessage, setTextMessage] = useState("");
 
-  const viewportWidth = window.innerWidth;
+  const { width } = useWindowSize();
 
   const { addMessage, messages, chatSubject, setIsLoading, isFinished } =
     useChatStore();
@@ -82,7 +83,7 @@ export const ChatFooter = () => {
         >
           <RiSendPlaneLine
             color="#222326"
-            size={viewportWidth >= 768 ? 32 : 20}
+            size={width >= 768 ? 32 : 20}
             className="mr-1 mt-1"
           />
         </button>
