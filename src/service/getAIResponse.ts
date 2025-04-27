@@ -48,10 +48,14 @@ export const getAIResponse = async (
         messages: [
           {
             role: "system",
-            content: `Você é um assistente especializado em ${chatSubject}.
-              - O foco principal é ${chatSubject}
-              - Se for COMPLETAMENTE fora do tema ${chatSubject}, avise
-              - Mantenha respostas curtas e precisas`,
+            content: `Você é um assistente especializado EXCLUSIVAMENTE em ${chatSubject}.
+            
+            REGRAS ABSOLUTAS:
+            1. Só responda sobre ${chatSubject} (dados, curiosidades, informações relevantes)
+            2. Para QUALQUER pergunta fora desse tema avise o usuário que a pergunta esta fora do tema.
+            3. Mantenha as respostas custas e precisas.
+            
+            NÃO FAÇA COMPARAÇÕES com outros assuntos.`,
           },
 
           ...messages,
