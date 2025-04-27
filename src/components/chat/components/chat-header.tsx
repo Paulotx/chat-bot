@@ -26,7 +26,7 @@ export const ChatHeader = () => {
 
   return (
     <>
-      <div className="flex items-center justify-between rounded-t-3xl py-4 h-20 w-full px-6 border-b-1 border-b-gray-600">
+      <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center md:justify-between rounded-t-3xl py-4 md:h-20 w-full px-6 border-b-1 border-b-gray-600">
         <div className="flex items-center gap-5">
           <RiRobot2Line color="#ededed" size={32} />
           <span className="text-gray-200 text-lg font-bold tracking-widest">

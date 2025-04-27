@@ -19,7 +19,7 @@ export const Message = ({ message, isMine }: MessageProps) => {
           isMine ? "bg-blue-500" : "bg-gray-600"
         )}
       >
-        <p>{message}</p>
+        <p className="text-sm md:text-md">{message}</p>
       </div>
     </div>
   );

@@ -9,6 +9,8 @@ import { ChatMessage, getAIResponse } from "@/service/getAIResponse";
 export const ChatFooter = () => {
   const [textMessage, setTextMessage] = useState("");
 
+  const viewportWidth = window.innerWidth;
+
   const { addMessage, messages, chatSubject, setIsLoading, isFinished } =
     useChatStore();
 
@@ -61,7 +63,7 @@ export const ChatFooter = () => {
 
   return (
     <div className="flex items-center justify-center h-28 w-full border-t-1 border-t-gray-600 rounded-b-3xl">
-      <div className="flex items-center gap-6 w-full px-6">
+      <div className="flex items-center gap-2 md:gap-6 w-full px-6">
         <div className="flex-1 mt-2">
           <textarea
             rows={2}
@@ -75,10 +77,14 @@ export const ChatFooter = () => {
         </div>
 
         <button
-          className="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer hover:opacity-75 transition-opacity duration-200"
+          className="bg-gray-200 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer hover:opacity-75 transition-opacity duration-200"
           onClick={handleSendMessage}
         >
-          <RiSendPlaneLine color="#222326" size={32} className="mr-1 mt-1" />
+          <RiSendPlaneLine
+            color="#222326"
+            size={viewportWidth >= 768 ? 32 : 20}
+            className="mr-1 mt-1"
+          />
         </button>
       </div>
     </div>

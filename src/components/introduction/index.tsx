@@ -39,13 +39,13 @@ export const Introduction = () => {
   };
 
   return (
-    <div className="w-[80%] h-[75%] flex items-center justify-center rounded-3xl border-1 bg-gray-700 border-gray-600 shadow-lg">
+    <div className="w-[90%] md:w-[80%] py-8 md:py-0 md:h-[75%] px-4 flex items-center justify-center rounded-3xl border-1 bg-gray-700 border-gray-600 shadow-lg">
       <div className="mx-auto">
-        <p className="text-3xl text-center tracking-wide font-medium text-gray-200">
+        <p className="text-xl md:text-3xl text-center tracking-wide font-medium text-gray-200">
           {getGreetingMessage()}! Seja muito bem-vindo.
         </p>
 
-        <p className="text-center text-lg text-gray-200 mt-2">
+        <p className="text-center text-md md:text-lg text-gray-200 mt-1 md:mt-2">
           Informe um tema para começarmos a conversa.
         </p>
 
@@ -54,12 +54,12 @@ export const Introduction = () => {
           value={themeText}
           onChange={(e) => setThemeText(e.target.value.toUpperCase())}
           onKeyDown={handleKeyDown}
-          className="border-1 border-gray-600 w-full resize-none outline-0 p-3 rounded-lg mt-12 text-center"
+          className="border-1 border-gray-600 w-full resize-none outline-0 p-2 md:p-3 rounded-lg mt-6 md:mt-12 text-center"
         />
 
         <button
           onClick={handleThemeSubmit}
-          className="bg-blue-400 w-full py-3 rounded-lg cursor-pointer mt-4 hover:opacity-75 transition-opacity duration-200"
+          className="bg-blue-400 w-full py-2 md:py-3 rounded-lg cursor-pointer mt-4 hover:opacity-75 transition-opacity duration-200"
         >
           Começar
         </button>
