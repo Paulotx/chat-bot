@@ -37,7 +37,7 @@ interface OpenAIRequestParams {
 
 export const getAIResponse = async (
   messages: ChatMessage[],
-  topic: string
+  chatSubject: string
 ): Promise<string> => {
   try {
     const response: AxiosResponse<OpenAIResponse> = await openai.post(
@@ -48,9 +48,9 @@ export const getAIResponse = async (
         messages: [
           {
             role: "system",
-            content: `Você é um assistente especializado em ${topic}.
-              - O foco principal é ${topic}, mas pode responder sobre esportes em geral
-              - Se for COMPLETAMENTE fora do tema esportes, avise
+            content: `Você é um assistente especializado em ${chatSubject}.
+              - O foco principal é ${chatSubject}
+              - Se for COMPLETAMENTE fora do tema ${chatSubject}, avise
               - Mantenha respostas curtas e precisas`,
           },
 
