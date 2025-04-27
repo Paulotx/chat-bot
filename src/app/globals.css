@@ -20,6 +20,7 @@
   --color-blue-400: #4a83e2;
 
   --color-red-500: #e24848;
+  --color-red-600: #dc2626;
 
   --color-green-500: #3ba676;
 }
@@ -71,4 +72,33 @@ body {
 
 .animate-bounce {
   animation: bounce 1s infinite;
+}
+
+/* Animações */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.15s ease-out;
+}
+
+/* Estilos do dialog */
+dialog {
+  border: none !important;
+  padding: 0 !important;
+  max-width: 95vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
 }
