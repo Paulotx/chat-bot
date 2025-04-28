@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 import { cn } from "@/helpers/cn";
 
 interface MessageProps {
@@ -19,7 +21,9 @@ export const Message = ({ message, isMine }: MessageProps) => {
           isMine ? "bg-blue-500" : "bg-gray-600"
         )}
       >
-        <p className="text-sm md:text-base">{message}</p>
+        <p className="text-sm md:text-base">
+          <ReactMarkdown>{message}</ReactMarkdown>
+        </p>
       </div>
     </div>
   );
